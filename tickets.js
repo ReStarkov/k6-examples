@@ -96,7 +96,7 @@ export function logInStep1() {
 export function logInStep2() {
     group('logInStep2', () => {
         let res = http.get(baseUrl + port + path + '/nav.pl?page=menu&in=home');
-        checkStatusCode(res, 200)
+        statusCodeShouldBe(res, 200)
     })
 }
 
@@ -182,6 +182,7 @@ export function setFlight() {
             "findFlights.x": "23",
             "findFlights.y": "4",
         }
+
         let res = http.post(baseUrl + port + path + '/reservations.pl', payload);
         statusCodeShouldBe(res, 200)
     })
@@ -207,6 +208,7 @@ export function setPayments() {
             "buyFlights.y": "4",
             ".cgifields": "saveCC",
         }
+
         let res = http.post(baseUrl + port + path + '/reservations.pl', payload);
         statusCodeShouldBe(res, 200)
         responseShouldHaveText(res, 'Thank you for booking through Web Tours')
