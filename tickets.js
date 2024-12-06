@@ -58,6 +58,7 @@ export default function () {
     createReservation();
     setFlight();
     setPayments();
+    getMain();
 }
 
 export function getMain() {
