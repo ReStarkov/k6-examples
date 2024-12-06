@@ -51,6 +51,7 @@ export default function () {
     getMain();
     toNavigate();
     logInStep1();
+    logInStep2();
     logInStep3();
     goToSearch();
     getFlightsMenu();
